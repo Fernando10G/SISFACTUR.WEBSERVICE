@@ -20,12 +20,7 @@ namespace SISTEM.FACTUR.WEBSERVICE.Controllers
         public RegistroEmpresaController()
         {
             dapaises = new DAPaises();
-            daregistroempresa = DARegistroeEmpresa();
-        }
-
-        private DARegistroEmpresa DARegistroeEmpresa()
-        {
-            throw new NotImplementedException();
+            daregistroempresa = new DARegistroEmpresa();
         }
 
         [HttpPost]
