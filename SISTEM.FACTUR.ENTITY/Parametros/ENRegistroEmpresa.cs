@@ -8,5 +8,8 @@ namespace SISTEM.FACTUR.ENTITY.Parametros
 {
     public class ENRegistroEmpresa
     {
+        public string razonsocial { get; set; }
+        public string ruc { get; set; }
+        public string email { get; set; }
     }
 }

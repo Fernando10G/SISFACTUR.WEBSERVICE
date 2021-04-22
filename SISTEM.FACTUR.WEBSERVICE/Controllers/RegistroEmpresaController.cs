@@ -15,11 +15,19 @@ namespace SISTEM.FACTUR.WEBSERVICE.Controllers
 
 
         private DAPaises dapaises;
+        private DARegistroEmpresa daregistroempresa;
 
         public RegistroEmpresaController()
         {
             dapaises = new DAPaises();
+            daregistroempresa = DARegistroeEmpresa();
         }
+
+        private DARegistroEmpresa DARegistroeEmpresa()
+        {
+            throw new NotImplementedException();
+        }
+
         [HttpPost]
         [Route("listarPaises")]
 
@@ -97,6 +105,27 @@ namespace SISTEM.FACTUR.WEBSERVICE.Controllers
         }
 
 
+
+
+
+
+        [HttpPost]
+        [Route("validarRegistro")]
+
+        public IHttpActionResult validarRegistro(ENRegistroEmpresa paramss)
+        {
+            try
+            {
+
+                var rpt = daregistroempresa.validarRegistro(paramss);
+                return Ok(rpt);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
     }
 }
 
