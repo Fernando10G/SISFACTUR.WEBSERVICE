@@ -121,6 +121,30 @@ namespace SISTEM.FACTUR.WEBSERVICE.Controllers
             }
 
         }
+
+
+
+        [HttpPost]
+        [Route("insertarEmpresa")]
+
+        public IHttpActionResult insertarEmpresa(ENRegistroEmpresa paramss)
+        {
+            try
+            {
+
+                var rpt = daregistroempresa.insertarEmpresa(paramss);
+                return Ok(rpt);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+
+
+
     }
 }
 
