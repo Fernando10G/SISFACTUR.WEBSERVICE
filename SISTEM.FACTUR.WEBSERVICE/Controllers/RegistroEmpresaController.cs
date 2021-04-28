@@ -100,10 +100,6 @@ namespace SISTEM.FACTUR.WEBSERVICE.Controllers
         }
 
 
-
-
-
-
         [HttpPost]
         [Route("validarRegistro")]
 

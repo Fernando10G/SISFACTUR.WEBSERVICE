@@ -112,7 +112,7 @@ namespace SISTEM.FACTUR.DATOS
         {
             try
             {
-                string cs = ConfigurationManager.ConnectionStrings["Conexion"].ConnectionString;
+                string cs = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
                 var lista = new List<ResponseRegistroEmpresa>();
 
 
@@ -127,7 +127,7 @@ namespace SISTEM.FACTUR.DATOS
                     cmd.Parameters.Add(new SqlParameter("@email", paramss.email));
                     cmd.Parameters.Add(new SqlParameter("@username", paramss.username));
                     cmd.Parameters.Add(new SqlParameter("@usuario", paramss.usuario));
-                    cmd.Parameters.Add(new SqlParameter("@contraseña", paramss.contraseña));
+                    cmd.Parameters.Add(new SqlParameter("@contrasena", paramss.contraseña));
                     cmd.Parameters.Add(new SqlParameter("@cargo", paramss.cargo));
                     cmd.Parameters.Add(new SqlParameter("@cantuser", paramss.cantuser));
                     cmd.Parameters.Add(new SqlParameter("@proyecto", paramss.proyecto));
