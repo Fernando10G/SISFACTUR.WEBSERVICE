@@ -24,5 +24,7 @@ namespace SISTEM.FACTUR.ENTITY.Parametros
         public string cargo { get; set; }
         public string filename { get; set; }
         public string proyecto { get; set; }
+
+        
     }
 }

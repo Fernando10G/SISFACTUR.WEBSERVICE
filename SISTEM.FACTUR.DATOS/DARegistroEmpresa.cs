@@ -156,5 +156,48 @@ namespace SISTEM.FACTUR.DATOS
         }
 
 
+
+
+        public ResponseRegistroEmpresa activarCuenta(string ruc)
+        {
+            try
+            {
+                string cs = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
+                var lista = new List<ResponseRegistroEmpresa>();
+
+
+                using (SqlConnection conn = new SqlConnection(cs))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("usp_activarCuenta", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add(new SqlParameter("@ruc", ruc));
+                  
+
+
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            var resul = new ResponseRegistroEmpresa();
+
+                            resul.response = Convert.ToString(rdr["response"]);
+
+                            lista.Add(resul);
+                        }
+                    }
+                }
+                return lista.FirstOrDefault();
+            }
+
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
     }
 }
