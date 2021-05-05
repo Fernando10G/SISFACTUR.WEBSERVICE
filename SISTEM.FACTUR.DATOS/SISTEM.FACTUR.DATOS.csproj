@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DALogin.cs" />
     <Compile Include="DAPaises.cs" />
     <Compile Include="DARegistroEmpresa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

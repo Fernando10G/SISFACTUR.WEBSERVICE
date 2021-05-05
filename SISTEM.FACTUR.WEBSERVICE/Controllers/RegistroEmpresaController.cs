@@ -23,6 +23,10 @@ namespace SISTEM.FACTUR.WEBSERVICE.Controllers
             daregistroempresa = new DARegistroEmpresa();
         }
 
+        [Authorize]
+
+
+
         [HttpPost]
         [Route("listarPaises")]
 
