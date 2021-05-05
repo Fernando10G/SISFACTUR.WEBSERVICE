@@ -10,5 +10,9 @@ namespace SISTEM.FACTUR.ENTITY.Response
     {
         public string responsetoken { get; set; }
         public string response { get; set; }
+
+        public string username { get; set; }
+        public string cargo { get; set; }
+        public int cantaccesos { get; set; }
     }
 }

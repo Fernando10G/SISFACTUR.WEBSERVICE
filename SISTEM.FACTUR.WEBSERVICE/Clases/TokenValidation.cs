@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace CNTI365.FACTUR.Service.Clases
+namespace SISTEM.FACTUR.Service.Clases
 {
     internal class TokenValidation : DelegatingHandler
     {

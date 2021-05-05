@@ -20,11 +20,9 @@ namespace SISTEM.FACTUR.DATOS
                 string cs = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
                 var lista = new List<ResponseLogin>();
 
-
                 using (SqlConnection conn = new SqlConnection(cs))
                 {
                     conn.Open();
-
                     SqlCommand cmd = new SqlCommand("usp_ValidarUserToken", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@usertoken", paramss.usertoken));
@@ -36,16 +34,13 @@ namespace SISTEM.FACTUR.DATOS
                         while (rdr.Read())
                         {
                             var resul = new ResponseLogin();
-
                             resul.responsetoken = Convert.ToString(rdr["response"]);
-
                             lista.Add(resul);
                         }
                     }
                 }
                 return lista.FirstOrDefault();
             }
-
             catch (Exception ex)
             {
 
@@ -64,11 +59,9 @@ namespace SISTEM.FACTUR.DATOS
                 string cs = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
                 var lista = new List<ResponseLogin>();
 
-
                 using (SqlConnection conn = new SqlConnection(cs))
                 {
                     conn.Open();
-
                     SqlCommand cmd = new SqlCommand("usp_ValidarAccesos", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@ruc", paramss.ruc));
@@ -83,6 +76,10 @@ namespace SISTEM.FACTUR.DATOS
                             var resul = new ResponseLogin();
 
                             resul.response = Convert.ToString(rdr["response"]);
+                            resul.username = Convert.ToString(rdr["username"]);
+                            resul.cargo = Convert.ToString(rdr["cargo"]);
+                            resul.cantaccesos = Convert.ToInt32(rdr["cantaccesos"]);
+
 
                             lista.Add(resul);
                         }
